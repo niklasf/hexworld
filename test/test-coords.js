@@ -40,10 +40,16 @@ describe("coords", function () {
         });
     });
 
-    describe("sw", function() {
+    describe("sw", function () {
         it("should go south-west", function () {
             assert.deepEqual(coords.sw({ x: 2, y: 2 }), { x: 1, y: 2 });
             assert.deepEqual(coords.sw({ x: 5, y: 0 }), { x: 4, y: 1 });
+        });
+    });
+
+    describe("offset", function () {
+        it("should go by the given offset", function () {
+            assert.deepEqual(coords.offset({ x: 3, y: 1}, "n-se-s-sw"), { x: 3, y: 2 });
         });
     });
 });
