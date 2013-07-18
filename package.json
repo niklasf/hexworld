@@ -6,6 +6,7 @@
         "requirejs": "2.x"
     },
     "devDependencies": {
+        "mocha": "1.x"
     },
     "engine": "node >= 0.4.1"
 }
