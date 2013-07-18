@@ -1,0 +1,11 @@
+{
+    "name": "hexworld",
+    "description": "A turn based game with hex tiles",
+    "author": "Niklas Fiekas <niklas.fiekas@googlemail.com>",
+    "dependencies": {
+        "requirejs": "2.x"
+    },
+    "devDependencies": {
+    },
+    "engine": "node >= 0.4.1"
+}
