@@ -1,3 +1,4 @@
 node_modules/.bin/
-*.un~
 npm-debug.log
+*.un~
+*.swp
