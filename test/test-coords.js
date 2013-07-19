@@ -1,5 +1,6 @@
 var requirejs = require("requirejs"),
-    assert = require("assert");
+    assert = require("assert"),
+    PNG = require("png-js");
 
 requirejs.config({ baseUrl: "lib" });
 
@@ -60,6 +61,15 @@ describe("coords", function () {
             assert.deepEqual(coords.real({ x: 2, y: 0 }), { left: 108, top: 0 });
 
             assert.deepEqual(coords.real({ x: 0, y: 1 }), { left: 0, top: 72 });
+        });
+    });
+
+    describe("coords", function () {
+        it("should return the correct hex coordinates", function (done) {
+            PNG.decode("test/fixtures/hexes.png", function (pixels) {
+                console.log(pixels[(234 * 36 + 36 + 54) * 3 + 1]);
+                done();
+            });
         });
     });
 });
