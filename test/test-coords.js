@@ -67,8 +67,21 @@ describe("coords", function () {
     describe("coords", function () {
         it("should return the correct hex coordinates", function (done) {
             PNG.decode("test/fixtures/hexes.png", function (pixels) {
-                console.log(pixels[(234 * 36 + 36 + 54) * 3 + 1]);
-                done();
+                var colors = [ [0xff0000, 0x0000ff, 0x00ff00, 0x9b9b9b ],
+                               [0xfff000, 0xff7e00, 0x000000, 0xff00f0 ],
+                               [0x113b00, 0xffffff, 0x00ffd6, 0xffffff ]];
+
+                for (var left = 20; left < 210; left += 5) {
+                    for (var top = 35; top < 200; top += 5) {
+                        var coords = coords.coords({ left: left, top: top });
+                        var expectedColor = colors[coords.y][coords.x];
+                        var actualColor = pixels[(234 * top + left) * 3] * 255 * 255 +
+                                          pixels[(234 * top + left) * 3 + 1] * 255 +
+                                          pixels[(234 * top + left) * 3 + 2];
+
+                        assert.equal(expectedColor, actualColor);
+                    }
+                }
             });
         });
     });
