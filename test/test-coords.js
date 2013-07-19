@@ -49,7 +49,17 @@ describe("coords", function () {
 
     describe("offset", function () {
         it("should go by the given offset", function () {
-            assert.deepEqual(coords.offset({ x: 3, y: 1}, "n-se-s-sw"), { x: 3, y: 2 });
+            assert.deepEqual(coords.offset({ x: 3, y: 1 }, "n-se-s-sw"), { x: 3, y: 2 });
+        });
+    });
+
+    describe("real", function () {
+        it("should convert to real screen coordinates", function () {
+            assert.deepEqual(coords.real({ x: 0, y: 0 }), { left: 0, top: 0 });
+            assert.deepEqual(coords.real({ x: 1, y: 0 }), { left: 54, top: 36 });
+            assert.deepEqual(coords.real({ x: 2, y: 0 }), { left: 108, top: 0 });
+
+            assert.deepEqual(coords.real({ x: 0, y: 1 }), { left: 0, top: 72 });
         });
     });
 });
