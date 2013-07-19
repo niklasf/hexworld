@@ -3,7 +3,8 @@
     "description": "A turn based game with hex tiles",
     "author": "Niklas Fiekas <niklas.fiekas@googlemail.com>",
     "dependencies": {
-        "requirejs": "2.x"
+        "requirejs": "2.x",
+        "png-js": "0.1.x"
     },
     "devDependencies": {
     },
