@@ -74,6 +74,8 @@ describe("coords", function () {
                 for (var left = 20; left < 210; left += 5) {
                     for (var top = 40; top < 200; top += 5) {
                         var hex = coords.hex({ left: left, top: top });
+                        console.log({ left: left, top: top });
+                        console.log(hex);
                         var expectedColor = colors[hex.y][hex.x];
                         var actualColor = pixels[(234 * top + left) * 4] * 256 * 256 +
                                           pixels[(234 * top + left) * 4 + 1] * 256 +
