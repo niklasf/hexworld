@@ -71,8 +71,8 @@ describe("coords", function () {
                                [0xfff000, 0xff7e00, 0x000000, 0xff00f0 ],
                                [0x113b00, 0xffffff, 0x00ffd6, 0xffffff ]];
 
-                for (var left = 20; left < 210; left += 5) {
-                    for (var top = 40; top < 200; top += 5) {
+                for (var left = 20; left < 210; left += 13) {
+                    for (var top = 40; top < 200; top += 11) {
                         var hex = coords.hex({ left: left, top: top });
                         console.log({ left: left, top: top });
                         console.log(hex);
@@ -84,6 +84,8 @@ describe("coords", function () {
                         assert.equal(expectedColor, actualColor);
                     }
                 }
+
+                done();
             });
         });
     });
