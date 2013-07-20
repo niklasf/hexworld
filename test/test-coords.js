@@ -64,7 +64,7 @@ describe("coords", function () {
         });
     });
 
-    describe("coords", function () {
+    describe("hex", function () {
         it("should return the correct hex coordinates", function (done) {
             PNG.decode("test/fixtures/hexes.png", function (pixels) {
                 var colors = [ [0xff0000, 0x0000ff, 0x00ff00, 0x9b9b9b ],
@@ -72,12 +72,12 @@ describe("coords", function () {
                                [0x113b00, 0xffffff, 0x00ffd6, 0xffffff ]];
 
                 for (var left = 20; left < 210; left += 5) {
-                    for (var top = 35; top < 200; top += 5) {
-                        var coords = coords.coords({ left: left, top: top });
-                        var expectedColor = colors[coords.y][coords.x];
-                        var actualColor = pixels[(234 * top + left) * 3] * 255 * 255 +
-                                          pixels[(234 * top + left) * 3 + 1] * 255 +
-                                          pixels[(234 * top + left) * 3 + 2];
+                    for (var top = 40; top < 200; top += 5) {
+                        var hex = coords.hex({ left: left, top: top });
+                        var expectedColor = colors[hex.y][hex.x];
+                        var actualColor = pixels[(234 * top + left) * 4] * 256 * 256 +
+                                          pixels[(234 * top + left) * 4 + 1] * 256 +
+                                          pixels[(234 * top + left) * 4 + 2];
 
                         assert.equal(expectedColor, actualColor);
                     }
