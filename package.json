@@ -5,7 +5,8 @@
     "dependencies": {
         "requirejs": "2.x",
         "png-js": "0.1.x",
-	"express": "3.x"
+	"express": "3.x",
+	"temp": "0.5.x"
     },
     "devDependencies": {
     },
