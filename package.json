@@ -4,7 +4,8 @@
     "author": "Niklas Fiekas <niklas.fiekas@googlemail.com>",
     "dependencies": {
         "requirejs": "2.x",
-        "png-js": "0.1.x"
+        "png-js": "0.1.x",
+	"express": "3.x"
     },
     "devDependencies": {
     },
